@@ -19,45 +19,13 @@ Also, there is a TypoScript condition included which takes effect, when
 - you are logged-in to the TYPO3 backend and
 - added the query parameter ``?debug=1``
 
-This disables all features of EXT:min and also the compression and concatenation features of the core itself.
+This disables all features of EXT:min.
 
 
 Settings
 --------
 
 The following chapters, explain the available options you have, using the default configuration as example.
-
-
-Asset compression (CSS/JS)
---------------------------
-
-To enable the asset compression of TYPO3, as well as of EXT:min just add this to your TypoScript.
-
-.. code-block:: typoscript
-
-    config {
-        compressCss = 1
-        concatenateCss = 1
-        compressJs = 1
-        concatenateJs = 1
-    }
-
-
-AssetCollector compression
---------------------------
-
-Since version 2.1 assets added by the ``AssetCollector`` are also minified (but not concatenated).
-You can enable/disable the compression of AssetCollector assets. By default it is enabled:
-
-
-.. code-block:: typoscript
-
-    plugin.tx_min.assetCollector {
-        compressCss = 1
-        compressInlineCss = 1
-        compressJs = 1
-        compressInlineJs = 1
-    }
 
 
 HTML source compression

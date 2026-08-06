@@ -6,6 +6,11 @@
 Versions
 ========
 
+4.0.0
+-----
+
+- [TASK] Prepare or V14 support, cause Core removed function for css/js compressing, this is also gone here.
+
 3.1.2
 -----
 

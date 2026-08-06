@@ -19,13 +19,13 @@ EXT:min - Minifier for TYPO3 CMS
         en
 
     :Description:
-        Extends TYPO3's compressor for JS and CSS with minifier. This may save you up to 60% of default compressed file size. Also compresses HTML output of TYPO3. Full composer support.
+        Compresses HTML output of TYPO3. Full composer support.
 
     :Keywords:
         TYPO3 CMS, minifier, minify, compress, optimize, output
 
     :Copyright:
-        2016-2025
+        2016-2026
 
     :Author:
         Armin Vieweg

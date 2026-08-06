@@ -23,26 +23,28 @@ You'll find **min** in TER for TYPO3. You can download it from web or right in t
 Requirements
 ------------
 
-- PHP 8.1 or higher
-- TYPO3 CMS 12.4 LTS
+- PHP 8.4 or higher
+- TYPO3 CMS 14.3 LTS
 
 
 Setup
 -----
 
-**It is required to manually include the TypoScript configuration, of EXT:min.**
+**It is required to manually include the EXT:min site set.**
 
-You can do this in TypoScript using the ``@import`` function:
+Add the site set ``t3/min`` to your site configuration dependencies:
+
+.. code-block:: yaml
+
+    dependencies:
+      - t3/min
+
+
+Alternatively, you can import the TypoScript configuration manually:
 
 .. code-block:: typoscript
 
     @import 'EXT:min/Configuration/TypoScript/setup.typoscript'
-
-
-or define it as static include in the TypoScript template itself:
-
-.. image:: Images/Installation_StaticIncludes.png
-   :alt: Setup of EXT:min in TypoScript template's static includes
 
 
 Upgrade notice

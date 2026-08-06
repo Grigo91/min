@@ -34,11 +34,13 @@ class Tinysource
     {
         /** @var FrontendTypoScript|null $frontendTypoScript */
         $frontendTypoScript = $request->getAttribute('frontend.typoscript');
-        if (null === $frontendTypoScript) {
+        if (null === $frontendTypoScript || !$frontendTypoScript->hasSetup()) {
             return $source;
         }
-        $this->conf = $frontendTypoScript->getSetupArray()['plugin.']['tx_min.']['tinysource.'] ?? [];
-        if (($this->conf['enable'] ?? false) && !($GLOBALS['TSFE']->config['config']['disableAllHeaderCode'] ?? false)) {
+        $setup = $frontendTypoScript->getSetupArray();
+        $config = $frontendTypoScript->getConfigArray();
+        $this->conf = $setup['plugin.']['tx_min.']['tinysource.'] ?? [];
+        if (($this->conf['enable'] ?? false) && !($config['disableAllHeaderCode'] ?? false)) {
             $headOffset = strpos($source, '<head');
             $headEndOffset = strpos($source, '>', $headOffset ?: 0);
             $closingHeadOffset = strpos($source, '</head>');
